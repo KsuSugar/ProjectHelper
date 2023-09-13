@@ -68,7 +68,7 @@ def random_animal():
     return random.choice(animal)
 
 #def search_word(word):
-    #if word
+   # if word
 
     # Обработчик нажатий на кнопки
 @bot.callback_query_handler(func=lambda call: True)
@@ -84,7 +84,7 @@ def callback_worker(call):
     keyboard.add(key_pr_2)
     bot.send_message(call.message.chat.id, msg1, reply_markup=keyboard)
   elif call.data == "doc":
-      msg4 = ('Пользователь ' + str(call.message.from_user.id) + ' сделал запрос на поиск в папке')
+      msg4 = ('Введите слово, по которому осуществить поиск')
       bot.send_message(call.message.chat.id, msg4)
   elif call.data == "dog":
       bot.send_photo(call.message.chat.id, photo=random_animal())
