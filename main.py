@@ -41,6 +41,8 @@ def get_start_messages(message):
     bot.send_message(message.from_user.id, "Для взаимодействия с меню бота, необходимо нажать команду меню /start.\nБот умеет отправлять <b>регламенты</b> и <b>концепции</b> по разным фазам если требуются примеры документации", parse_mode="HTML")
   elif message.text == "/about":
     bot.send_message(message.from_user.id, "Этот бот создан для помощи в работе. В нем можно найти как документацию от заказчика по проектам, так и шаблоны и образцы документов, которые нужно написать на разных фазах. Для перехода к запуску бота-помощника нажми команду меню /start. Для поддержки автора бота, напиши аккаунту @ksakharova")
+    scheme = open('Bot-scheme.jpg', 'rb')
+    bot.send_photo(message.from_user.id, photo=scheme)
   elif message.text == "Регламент":
     keyboard = types.InlineKeyboardMarkup()
     key_phase2 = types.InlineKeyboardButton(text='Фаза_2. Разработка', callback_data='phase2')
